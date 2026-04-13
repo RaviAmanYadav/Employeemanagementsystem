@@ -3,7 +3,7 @@ from app.models.employee import Employee
 from app.utils.helpers import generate_id
 
 
-def add_Employee(name, age, positon):
+def add_employee(name, age, positon):
     employees = read_data()
 
     emp = Employee(id=generate_id(employees), name=name, age=age, position=positon)

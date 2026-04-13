@@ -1,4 +1,4 @@
-from app.service.employee_service import add_Employee
+from app.service.employee_service import add_employee
 
 
 def run():
@@ -11,7 +11,7 @@ def run():
                 name = input("Enter Employee name => ")
                 age = int(input("Enter Employee age => "))
                 position = input("Enter Employee Position => ")
-                msg = add_Employee(name, age, position)
+                msg = add_employee(name, age, position)
                 print(msg)
             case 2:
                 exit()

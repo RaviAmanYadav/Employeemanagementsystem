@@ -6,7 +6,12 @@ class Employee:
         self.position = position
 
     def to_dict(self):
-        self.to_dict()
+        return {
+            "id": self.id,
+            "name": self.name,
+            "age": self.age,
+            "position": self.position,
+        }
 
     @staticmethod
     def from_dict(data):

@@ -3,7 +3,7 @@ import os
 from config.settings import FILE_PATH
 
 
-def read_data(self):
+def read_data():
     if not os.path.exists(FILE_PATH):
         return []
 
