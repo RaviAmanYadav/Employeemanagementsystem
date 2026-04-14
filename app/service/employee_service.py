@@ -23,3 +23,6 @@ def searchEmployee(id):
 
     return result
     
+
+def showAllEmployee():
+    return read_data()

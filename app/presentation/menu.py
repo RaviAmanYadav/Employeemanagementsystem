@@ -1,11 +1,12 @@
-from app.service.employee_service import add_employee, searchEmployee
+from app.service.employee_service import add_employee, searchEmployee, showAllEmployee
 
 
 def run():
     while True:
-        print("1.Add employee")
+        print("1. Add employee")
         print("2. Serach Employee")
-        print("3. Exit")
+        print("3. Search All employee.")
+        print("4. Exit")
         choice = int(input("Enter your choice => "))
         match choice:
             case 1:
@@ -21,4 +22,9 @@ def run():
                     print(f"ID : {i["id"]}")
                     print(f"Name : {i["name"]}")
             case 3:
+                msg = showAllEmployee()
+                for i in msg:
+                    print(f"ID : {i["id"]}")
+                    print(f"Name : {i["name"]}")
+            case 4:
                 exit()
