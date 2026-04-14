@@ -1,10 +1,11 @@
-from app.service.employee_service import add_employee
+from app.service.employee_service import add_employee, searchEmployee
 
 
 def run():
     while True:
         print("1.Add employee")
-        print("2. Exit")
+        print("2. Serach Employee")
+        print("3. Exit")
         choice = int(input("Enter your choice => "))
         match choice:
             case 1:
@@ -14,4 +15,10 @@ def run():
                 msg = add_employee(name, age, position)
                 print(msg)
             case 2:
+                empID = int(input("Enter Emp ID => "))
+                msg = searchEmployee(empID)
+                for i in msg:
+                    print(f"ID : {i["id"]}")
+                    print(f"Name : {i["name"]}")
+            case 3:
                 exit()

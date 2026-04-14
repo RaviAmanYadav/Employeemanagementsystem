@@ -11,3 +11,15 @@ def add_employee(name, age, positon):
     employees.append(emp.to_dict())
     write_data(employees)
     return "Employee Successfully Added"
+
+
+def searchEmployee(id):
+    employee = read_data()
+
+    result = []
+    for emp in employee:
+        if emp["id"] == id:
+            result.append(emp)
+
+    return result
+    
