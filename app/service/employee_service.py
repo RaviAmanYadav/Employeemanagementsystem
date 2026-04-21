@@ -22,7 +22,17 @@ def searchEmployee(id):
             result.append(emp)
 
     return result
-    
+
 
 def showAllEmployee():
     return read_data()
+
+
+def deleteEmployee(id):
+    employee = read_data()
+    updated_employee = [emp for emp in employee if emp["id"] != id]
+    if len(employee) == len(updated_employee):
+        print("Employee Not found")
+    else:
+        write_data(updated_employee)
+        print("Employee deletion is succesful")
