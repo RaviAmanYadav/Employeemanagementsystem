@@ -30,9 +30,22 @@ def showAllEmployee():
 
 def deleteEmployee(id):
     employee = read_data()
-    updated_employee = [emp for emp in employee if emp["id"] != id]
-    if len(employee) == len(updated_employee):
+    deleteEmployee = [emp for emp in employee if emp["id"] != id]
+    if len(employee) == len(deleteEmployee):
         print("Employee Not found")
     else:
-        write_data(updated_employee)
+        write_data(deleteEmployee)
         print("Employee deletion is succesful")
+
+
+def updateEmployee(id):
+    employee = read_data()
+    for emp in employee:
+        if emp["id"] == id:
+            print("Provide new information")
+            emp["name"] = input("Enter the name => ")
+            emp["age"] = int(input("Enter new age => "))
+            write_data(employee)
+            return "Updated succesfully"
+        else:
+            return "No data found"
